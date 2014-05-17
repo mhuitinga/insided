@@ -186,11 +186,11 @@ input[type="button"].green {
 }
 
 input[type="button"].delete {
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #a7412a;
 	cursor: pointer;
-	padding: 0 5px;
+	padding: 4px 7px;
 	border: 1px solid #cb5841;
 	border-radius: 2px;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
