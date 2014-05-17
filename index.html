@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>Fubar</title>
+	
+	<link rel="stylesheet" href="css/styles.css" title="styles" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="css/selectric.css" title="styles" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.4.custom.min.css" title="styles" type="text/css" media="screen" charset="utf-8">
+	
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script src="js/scripts.js" charset="utf-8"></script>
+	<script src="js/jquery.selectric.min.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+</head>
+
+<body>
+	<div id="container">
+		<div id="search" class="content">
+			<form name="advancedsearch" id="advancedsearch">
+				<section>
+					<h1>Advanced search</h1>
+					<div id="rows"></div>
+					<input type="button" id="add_row" value="Add row" class="green">
+				</section>
+				<hr>
+				<section>
+					<h1>Columns</h1>
+					<div class="filtercolumn">
+						<input type="checkbox" name="usertitle" id="usertitle"> <label for="usertitle">Usertitle</label><br>
+						<input type="checkbox" name="comments" id="comments"> <label for="comments">Comments </label><br>
+						<input type="checkbox" name="deleted_comments" id="deleted_comments"> <label for="">Deleted comments</label><br>
+						<input type="checkbox" name="deleted_topics" id="deleted_topics"> <label for="deleted_topics">Deleted topics</label><br>
+						<input type="checkbox" name="questions_solved" id="questions_solved"> <label for="questions_solved">Questions solved</label><br>
+					</div>
+					<div class="filtercolumn">
+						<input type="checkbox" name="topics" id="topics"> <label for="topics">Topics</label><br>
+						<input type="checkbox" name="usergroup" id="usergroup"> <label for="usergroup">Usergroup</label><br>
+						<input type="checkbox" name="secondary_usergroup" id="secondary_usergroup"> <label for="secondary_usergroup">Secondary usergroup</label><br>
+						<input type="checkbox" name="registration_date" id="registration_date"> <label for="registration_date">Registration date</label><br>
+						<input type="checkbox" name="last_login" id="last_login"> <label for="last_login">Last login</label><br>
+					</div>
+					<div class="filtercolumn">
+						<input type="checkbox" name="logins" id="logins"> <label for="logins">Logins</label><br>
+						<input type="checkbox" name="last_comment" id="last_comment"> <label for="last_comment">Last comment</label><br>
+						<input type="checkbox" name="email" id="email"> <label for="email">Email</label><br> 
+						<input type="checkbox" name="sso-id" id="sso-id"> <label for="sso-id">SSO-ID</label><br>  
+						<input type="checkbox" name="ip-address" id="ip-address"> <label for="ip-address">IP-address</label><br>
+					</div>
+					<div class="filtercolumn">
+						<input type="checkbox" name="gender" id="gender"> <label for="gender">Gender</label><br>
+						<input type="checkbox" name="date_of_birth" id="date_of_birth"> <label for="date_of_birth">Date of Birth</label><br>
+						<input type="checkbox" name="location" id="location"> <label for="location">Location</label><br>
+						<input type="checkbox" name="interest" id="interest"> <label for="interest">Interest</label><br>
+					</div>
+					<div class="filtercolumn">
+						<input type="checkbox" name="profession" id="profession"> <label for="profession">Profession</label><br>
+						<input type="checkbox" name="signature" id="signature"> <label for="signature">Signature</label><br>
+						<input type="checkbox" name="notes" id="notes"> <label for="notes">Notes</label><br>	  
+						<input type="checkbox" name="badges" id="badges"> <label for="badges">Badges</label> <br> 
+					</div>
+					<br class="clear">
+				</section>
+				<hr>
+				<section>
+					<input type="button" id="" value="Update" class="blue">
+					<a href="#">Cancel</a>
+				</section>
+			</form>
+		</div>
+		
+		<nav id="advancedsearch_pagination" class="pagination">
+			<div class="navleft">
+				<div id="tags"></div><a href="#" id="clearall" class="hide">Clear selection</a>
+			</div>
+			<div class="navright">
+				<select>
+					<option>10 Rows</option>
+					<option>20 Rows</option>
+					<option>30 Rows</option>
+					<option>50 Rows</option>
+					<option>75 Rows</option>
+				</select>
+			</div>
+			<div class="navcenter">
+				<a href="" class="disabled">First</a>
+				<span class="divider">|</span>
+				<a href="" class="disabled">«</a>
+				<span class="divider">|</span>
+				Page <input type="text" value="1"> of 12
+				<span class="divider">|</span>
+				<a href="">»</a>
+				<span class="divider">|</span>
+				<a href="">Last</a>
+			</div>
+			<br class="clear">
+		</nav>
+		
+		<form name="userdata" id="userdata">
+			<div class="content">
+				<div id="users">
+					<div class="row title">
+						<div class="column username"><input type="checkbox" name="select_all" id="select_all"> Username &#9662;</div>
+						<div class="column comments">Comments</div>
+						<div class="column topics">Topics</div>
+						<div class="column usergroup">Usergroup</div>
+						<div class="column registrationdate">Registration date</div>
+						<div class="column lastlogin">Last login</div>
+						<div class="column lastcomment">Last comments</div>
+					</div>
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_01" id="checkbox_01"><a href="#"><img src="images/amberh.png" alt="window">Amber H.</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">64</span></div>
+						<div class="column topics"><span class="tp">9</span></div>
+						<div class="column usergroup"><span class="ug">Registered User</span></div>
+						<div class="column registrationdate"><span class="rd">19-mar-12 12:00</span></div>
+						<div class="column lastlogin"><span class="ll">16-aug-12 12:11</span></div>
+						<div class="column lastcomment"><span class="lc">16-aug-12 16:10</span></div>
+					</div>
+		
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_02" id="checkbox_02"><a href="#"><img src="images/bartpineapple.png" alt="window">Bart Pineapple</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">37</span></div>
+						<div class="column topics"><span class="tp">-</span></div>
+						<div class="column usergroup"><span class="ug">Registered User</span></div>
+						<div class="column registrationdate"><span class="rd">20-mar-11 13:57</span></div>
+						<div class="column lastlogin"><span class="ll">15-may-12 17:34</span></div>
+						<div class="column lastcomment"><span class="lc">14-may-12 20:01</div>
+					</div>
+					
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_03" id="checkbox_03"><a href="#"><img src="images/caitlynappleseed.png" alt="window">Caitlyn Appleseed</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">189</span></div>
+						<div class="column topics"><span class="tp">13</span></div>
+						<div class="column usergroup"><span class="ug">Registered User</span></div>
+						<div class="column registrationdate"><span class="rd">13-aug-12 22:09</span></div>
+						<div class="column lastlogin"><span class="ll">13-aug-12 22:10</span></div>
+						<div class="column lastcomment"><span class="lc">13-aug-12 23:50</span></div>
+					</div>
+					
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_04" id="checkbox_04"><a href="#"><img src="images/carmenbrandy.png" alt="window">Carmen Brandy</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">411</span></div>
+						<div class="column topics"><span class="tp">22</span></div>
+						<div class="column usergroup"><span class="ug">Moderator</span></div>
+						<div class="column registrationdate"><span class="rd">01-jan-11 11:21</span></div>
+						<div class="column lastlogin"><span class="ll">15-aug-12 17:17</span></div>
+						<div class="column lastcomment"><span class="lc">15-aug-12 18:13</span></div>
+					</div>
+					
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_05" id="checkbox_05"><a href="#"><img src="images/dolfdreamer.png" alt="window">Dolf Dreamer</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">282</span></div>
+						<div class="column topics"><span class="tp">-</span></div>
+						<div class="column usergroup"><span class="ug">Super-user</span></div>
+						<div class="column registrationdate"><span class="rd">18-jan-11 11:21</span></div>
+						<div class="column lastlogin"><span class="ll">15-aug-12 17:17</span></div>
+						<div class="column lastcomment"><span class="lc">15-aug-12 14:22</span></div>
+					</div>
+					
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_06" id="checkbox_06"><a href="#"><img src="images/edgarenders.png" alt="window">Edgar Enders</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">37</span></div>
+						<div class="column topics"><span class="tp">-</span></div>
+						<div class="column usergroup"><span class="ug">Registered User</span></div>
+						<div class="column registrationdate"><span class="rd">12-dec-12 08:55</span></div>
+						<div class="column lastlogin"><span class="ll">15-apr-12 08:08</span></div>
+						<div class="column lastcomment"><span class="lc">04-apr-12 23:59</span></div>
+					</div>
+				
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_07" id="checkbox_07"><a href="#"><img src="images/janeblackswan.png" alt="window">Jane Blackswan</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">189</span></div>
+						<div class="column topics"><span class="tp">13</span></div>
+						<div class="column usergroup"><span class="ug">Registered User</span></div>
+						<div class="column registrationdate"><span class="rd">04-feb-12 14:34</span></div>
+						<div class="column lastlogin"><span class="ll">16-aug-12 12:11</span></div>
+						<div class="column lastcomment"><span class="lc">14-aug-12 07:33</span></div>
+					</div>
+					
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_08" id="checkbox_08"><a href="#"><img src="images/jenniferappleseed.png" alt="window">Jennifer Appleseed</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">75</span></div>
+						<div class="column topics"><span class="tp">2</span></div>
+						<div class="column usergroup"><span class="ug">Moderator</span></div>
+						<div class="column registrationdate"><span class="rd">16-mar-12 18:12</span></div>
+						<div class="column lastlogin"><span class="ll">15-may-12 17:34</span></div>
+						<div class="column lastcomment"><span class="lc">16-aug-12 16:10</span></div>
+					</div>
+					
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_09" id="checkbox_09"><a href="#"><img src="images/johndoe.png" alt="window">John Doe</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">111</span></div>
+						<div class="column topics"><span class="tp">-</span></div>
+						<div class="column usergroup"><span class="ug">Registered User</span></div>
+						<div class="column registrationdate"><span class="rd">30-jan-12 21:00</span></div>
+						<div class="column lastlogin"><span class="ll">13-aug-12 22:10</span></div>
+						<div class="column lastcomment"><span class="lc">13-aug-12 23:50</span></div>
+					</div>
+					
+					<div class="row user">
+						<div class="column username"><input type="checkbox" name="checkbox_10" id="checkbox_10"><a href="#"><img src="images/johnfoe.png" alt="window">John Foe</a><a href="#"><img src="images/icn_window.png" alt="window" class='icn_window'></a></div>
+						<div class="column comments"><span class="cm">189</span></div>
+						<div class="column topics"><span class="tp">3</span></div>
+						<div class="column usergroup"><span class="ug">Super-user</span></div>
+						<div class="column registrationdate"><span class="rd">07-may-12 04:14</span></div>
+						<div class="column lastlogin"><span class="ll">05-apr-12 08:08</span></div>
+						<div class="column lastcomment"><span class="lc">14-may-12 20:01</span></div>
+					</div>
+					
+				</div>
+				<div id="user_actions">
+					<div id="user_change">
+						<select>
+							<option>Change usergroup</option>
+							<option value="a">Registered user</option>
+							<option value="b">Super-user</option>
+							<option value="c">Moderator</option>
+						</select>
+						<select>
+							<option>Add secondary user</option>
+							<option value="a"></option>
+							<option value="b"></option>
+							<option value="c"></option>
+						</select>
+						<select>
+							<option>Permissions</option>
+							<option value="a"></option>
+							<option value="b"></option>
+							<option value="c"></option>
+						</select>
+						<input type="button" id="bt_apply" value="Apply">
+					</div>
+					<div id="user_export">
+						<span id="progress"><img src="images/loading.gif" alt="loading" class='icn_loading'> 72%</span>
+						<input type="button" id="" value="Export to Excel">
+					</div>
+				</div>
+			</div>
+			
+			<nav id="user_pagination" class="pagination">
+				<div class="navright">
+					<select>
+						<option>10 Rows</option>
+						<option>20 Rows</option>
+						<option>30 Rows</option>
+						<option>50 Rows</option>
+						<option>75 Rows</option>
+					</select>
+				</div>
+				<div class="navcenter">
+					<a href="" class="disabled">First</a>
+					<span class="divider">|</span>
+					<a href="" class="disabled">«</a>
+					<span class="divider">|</span>
+					Page <input type="text" value="1"> of 12
+					<span class="divider">|</span>
+					<a href="">»</a>
+					<span class="divider">|</span>
+					<a href="">Last</a>
+				</div>
+				<br class="clear">
+			</nav>
+		</form>
+	</div>
+</body>
+</html>
