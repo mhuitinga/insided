@@ -287,11 +287,16 @@ input[type="text"] {
 	line-height: 22px;
 	height: 220px;
 	overflow: scroll;
+	overflow-x: hidden;
 	z-index: 1100;
 	border: 1px solid #c5c5c5;
 	border-top: none;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
+}
+
+.dateselect .dropdown {
+	overflow: hidden;
 }
 
 .multiselect .subitem {
@@ -352,9 +357,14 @@ input#add_row {
 	display:none;
 }
 
+.navleft {
+	margin: -5px 0;
+}
+
 .tagcontainer {
 	display: inline-block;
 	margin-right: 5px;
+	margin: 5px 5px 5px 0;
 }
 
 .tagcontainer:before {
@@ -421,7 +431,9 @@ span.divider {
 }
 
 .navleft div {
+	/*
 	margin-bottom: 10px;
+	*/
 }
 
 .navright {
@@ -464,7 +476,7 @@ div.username a {
 }
 
 div.username a:hover {
-	text-decoration: underline;
+	color: #1697c5;
 }
 
 div.username img {
